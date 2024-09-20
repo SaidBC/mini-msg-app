@@ -1,1 +1,1 @@
-# mini-msg-app
+# MINI-MSG APP
