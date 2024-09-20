@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <%- include('header') %>
+            <main>
+                <div class="messages-board">
+                    <div class="messages-container">
+                        <div>
+                            <img src="assets/blank-profile-picture-973460_1280.png" alt="">
+                        </div>
+                        <div class="msg-details">
+                            <div class="username">
+                                <span>
+                                    <%= messages[id - 1].user%>
+                                </span>
+                            </div>
+                            <div class="msg-text">
+                                <p>
+                                    <%= messages[id - 1].text %>
+                                </p>
+                            </div>
+                            <div class="msg-creation-date">
+                                <a href="../../">BACK TO HOME</a>
+                                <span> 2024 / 07 / 26 | 7:40 AM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <%- include('footer') %>
+    </div>
+</body>
+
+</html>

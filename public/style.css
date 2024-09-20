@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+    --main-bg: #ededed;
+    --secondary-bg: #4f46e5;
+    --ff-rubik: "Rubik", sans-serif;
+    --ff-protest-g: "Protest Guerrilla", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    background: var(--main-bg);
+    font-family: var(--ff-rubik);
+    ;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-block: 2rem;
+}
+
+header h1 {
+    font-family: var(--ff-protest-g);
+    font-weight: 400;
+}
+
+header ul {
+    display: flex;
+    gap: 2rem;
+}
+
+
+header li a {
+    text-decoration: none;
+    color: var(--secondary-bg);
+    font-size: 1.5rem;
+}
+
+header li a:hover {
+    text-decoration: underline;
+}
+
+.messages-board {
+    position: relative;
+    margin-inline: auto;
+    width: 50rem;
+    min-height: 37.5rem;
+    border-radius: 3rem;
+    box-shadow: -10px 10px hsla(243, 75%, 59%, 30%), -15px 15px hsla(243, 75%, 59%, 20%), -20px 20px hsla(243, 75%, 59%, 10%);
+    background: var(--secondary-bg);
+}
+
+.messages-container {
+    position: absolute;
+    inset: 3rem;
+    background: #3730a3;
+    border-radius: 2.5rem;
+    padding: 3rem;
+}
+
+.messages {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding-right: 1rem;
+    isolation: isolate;
+}
+
+.messages::-webkit-scrollbar {
+    width: 5px;
+}
+
+.messages::-webkit-scrollbar-track {
+    background: var(--main-bg);
+}
+
+.messages::-webkit-scrollbar-thumb {
+    background-color: #1e1b4b;
+}
+
+.messages .message {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem;
+    height: fit-content;
+    background: hsla(230, 94%, 82%, 60%);
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0 .5rem .5rem 0;
+    transform: scale(1);
+    transition: all .2s ease-in-out;
+}
+
+.messages .message::before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    left: -5px;
+    background: #201e57;
+    z-index: -1;
+}
+
+.messages .message:hover {
+    transform: scale(1.025);
+    background: hsla(230, 94%, 82%, 40%);
+
+}
+
+.message .user-and-date {
+    color: white;
+    display: grid;
+    gap: .5rem;
+}
+
+.user-and-date .username {
+    font-size: 1.5rem;
+}
+
+.open-msg a {
+    text-decoration: none;
+    color: white;
+    background: var(--secondary-bg);
+    padding: .5rem 1rem;
+    border-radius: .25rem;
+}
+
+
+.msg-details {
+    color: var(--main-bg);
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between;
+    height: 100%; */
+    gap: 2rem;
+}
+
+.msg-details .username span {
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+.msg-details .msg-text {
+    overflow: auto;
+    height: max(12rem, 12rem);
+}
+
+.msg-details .msg-text p {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.msg-details .msg-creation-date {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5rem;
+    margin-top: auto;
+}
+
+.msg-details .msg-creation-date a {
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    background: var(--secondary-bg);
+    padding: 1rem 2rem;
+    border-radius: .5rem;
+    box-shadow: 0 5px #26225f;
+    top: 0;
+    transition: top .2s ease-in-out;
+}
+
+.msg-details .msg-creation-date a:active {
+    position: relative;
+    top: 5px;
+    box-shadow: none;
+}
+
+footer {
+    padding-block: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* Form */
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    height: 100%;
+}
+
+form>* {
+    padding-block: 1rem;
+    font-size: 1.5rem;
+    border-radius: .5rem;
+    border: none;
+    background: var(--main-bg);
+    font-family: var(--ff-rubik);
+}
+
+form input,
+form textarea {
+    padding-inline: 2rem;
+}
+
+form textarea {
+    padding-block: 2rem;
+    max-width: fill-available;
+    max-width: -webkit-fill-available;
+}
+
+form button {
+    cursor: pointer;
+    background: #292379;
+    color: var(--main-bg);
+    box-shadow: 0 5px #1e1b4b;
+    top: 0;
+    transition: top .2s ease-in-out;
+}
+
+form button:active {
+    position: relative;
+    top: 5px;
+    box-shadow: none;
+}
