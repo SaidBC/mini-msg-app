@@ -82,6 +82,7 @@ header li a:hover {
     gap: 2.5rem;
     padding-right: 1rem;
     isolation: isolate;
+    overflow: auto;
 }
 
 .messages::-webkit-scrollbar {
