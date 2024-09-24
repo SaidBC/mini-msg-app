@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS messages (id INTEGER PRIMARY KEY GENERATED ALWAYS AS 
 
 const main = async () => {
     const client = new Client({
-        connectionString: 'postgres://default:eXc2dogzTH4v@ep-green-bush-a4o8psv6.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require'
+        connectionString: process.env.DATABASE_URL
     })
     await client.connect();
     await client.query(sql);
