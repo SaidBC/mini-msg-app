@@ -13,6 +13,5 @@ const main = async () => {
     await client.connect();
     await client.query(sql);
     await client.end();
-    console.log('Hello')
 }
-main()
+module.exports = main;
