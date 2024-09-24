@@ -2,9 +2,9 @@
     const currTime = new Date().getTime();
     let result = currTime - time;
     if (result < 1000) { result=result + 'ms' ; } else if (result>= 1000 && result < 60000) { result=Math.floor(result /
-            1000) + 's' ; } else if (result>= 60000 && result < 360000) { result=Math.floor(result / 1000 / 60)
-                + ' minutes' ; } else if (result>= 360000 && result < 8640000) { result=Math.floor(result / 1000 / 60 /
-                    60) + ' hours' ; } else if (result>= 8640000) {
+            1000) + 's' ; } else if (result>= 60000 && result < 3600000) { result=Math.floor(result / 1000 / 60)
+                + ' minutes' ; } else if (result>= 3600000 && result < 86400000) { result=Math.floor(result / 1000 / 60
+                    / 60) + ' hours' ; } else if (result>= 86400000) {
                     result = Math.floor(result / 1000 / 60 / 60 / 24) + ' days';
                     }
                     return result;
@@ -14,17 +14,17 @@
                         <div class="messages-container">
                             <ul class="messages">
                                 <% for (let i=0; i < messages.length;i++) {%>
-                                    <% const message=messages[i];let timestamp=message.added.getTime();%>
+                                    <% const message=messages[i];%>
                                         <li class="message">
                                             <div class="user-and-date">
                                                 <div class="username">
                                                     <span>
-                                                        <%= message.user %>
+                                                        <%= message.username %>
                                                     </span>
                                                 </div>
                                                 <div class="msg-creation-date">
                                                     <span>
-                                                        <%= timeAgo(timestamp)+' ago' %>
+                                                        <%= timeAgo(message.createdat)+' ago' %>
                                                     </span>
                                                 </div>
                                             </div>

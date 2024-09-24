@@ -1,4 +1,4 @@
-const messages = [
+let messages = [
     {
         text: "Hi there!",
         user: "Amando",
@@ -10,16 +10,17 @@ const messages = [
         added: new Date()
     }
 ]
+const db = require('../db/queries')
 
-
-const getAllMessages = (req, res) => {
+const getAllMessages = async (req, res) => {
+    messages = await db.getMessages();
     res.render('index', { messages })
 }
 const getSendMessage = (req, res) => {
     res.render('new')
 }
-const sendMessage = (req, res) => {
-    messages.push({ ...req.body, added: new Date() })
+const sendMessage = async (req, res) => {
+    await db.createMessage({ ...req.body, createdat: new Date().getTime() })
     res.redirect('/')
 }
 const getMessageById = (req, res) => {

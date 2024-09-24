@@ -21,18 +21,18 @@
                             <div class="msg-details">
                                 <div class="username">
                                     <span>
-                                        <%= msg.user%>
+                                        <%= msg.username%>
                                     </span>
                                 </div>
                                 <div class="msg-text">
                                     <p>
-                                        <%= msg.text %>
+                                        <%= msg.message %>
                                     </p>
                                 </div>
                                 <div class="msg-creation-date">
                                     <a href="../../">BACK TO HOME</a>
                                     <span>
-                                        <%= msg.added.getFullYear()+' / '+ msg.added.getMonth() + " /"
+                                        <%#= msg.added.getFullYear()+' / '+ msg.added.getMonth() + " /"
                                             +msg.added.getDate() +" | " + msg.added.getHours()+":"+msg.added.getMinutes()%> 
                                     </span>
                                 </div>

@@ -80,7 +80,7 @@ header li a:hover {
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
-    padding-right: 1rem;
+    padding: 1rem;
     isolation: isolate;
     overflow: auto;
 }
